@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hostel Room Maintenance Request</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f7f9;
+      color: #333;
+      padding: 20px;
+    }
+
+    .form-container {
+      max-width: 700px;
+      margin: auto;
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #2c3e50;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="number"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 15px;
+      transition: border-color 0.3s;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: #3498db;
+      outline: none;
+    }
+
+    select optgroup {
+      font-weight: bold;
+    }
+
+    .radio-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .radio-group label {
+      font-weight: normal;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    .word-count {
+      text-align: right;
+      font-size: 13px;
+      color: #888;
+    }
+
+    button[type="submit"] {
+      background-color: #3498db;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #2980b9;
+    }
+
+    @media (max-width: 600px) {
+      .form-container {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Hostel Room Maintenance Request</h2>
+    <form id="maintenanceForm">
+      
+      <!-- Personal Info -->
+      <div class="form-group">
+        <label for="fullName">Full Name</label>
+        <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" 
+               required pattern="^[A-Za-z\s]{2,50}$" title="Only letters and spaces, 2-50 characters">
+      </div>
+
+      <div class="form-group">
+        <label for="studentID">Student ID</label>
+        <input type="text" id="studentID" name="studentID" placeholder="02250123" 
+               required pattern="^\d{8}$" title="Exactly 8 digits">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="student.cst@rub.edu.bt" required>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="12345678"
+               required pattern="^\d{7,15}$" title="Enter a valid phone number (7-15 digits)">
+      </div>
+
+      <!-- Room Information -->
+      <div class="form-group">
+        <label for="block">Block/Building Name</label>
+        <select id="block" name="block" required>
+          <option value="" disabled selected>Select Block</option>
+          <option value="Block A">Block A</option>
+          <option value="Block B">Block B</option>
+          <option value="Block C">Block C</option>
+          <option value="Block F">Block F</option>
+          <option value="RK">RK</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="roomNumber">Room Number</label>
+        <input type="number" id="roomNumber" name="roomNumber" placeholder="Room number (e.g., 205)" 
+               required min="100" max="999">
+      </div>
+
+      <div class="form-group">
+        <label for="floorNumber">Floor Number</label>
+        <input type="number" id="floorNumber" name="floorNumber" placeholder="Floor number" 
+               required min="1" max="10">
+      </div>
+
+      <!-- Issue Details -->
+      <div class="form-group">
+        <label for="issueType">Type of Issue</label>
+        <select id="issueType" name="issueType" required>
+          <option value="" disabled selected>Select Issue Type</option>
+          <optgroup label="Electrical">
+            <option value="Light Issue">Light Issue</option>
+            <option value="Socket Problem">Socket Problem</option>
+          </optgroup>
+          <optgroup label="Plumbing">
+            <option value="Leaking Pipe">Leaking Pipe</option>
+            <option value="Clogged Drain">Clogged Drain</option>
+          </optgroup>
+          <optgroup label="Furniture">
+            <option value="Broken Bed">Broken Bed</option>
+            <option value="Damaged Chair/Table">Damaged Chair/Table</option>
+          </optgroup>
+          <optgroup label="Infrastructure">
+            <option value="Wall Damage">Wall Damage</option>
+            <option value="Ceiling Leak">Ceiling Leak</option>
+          </optgroup>
+          <optgroup label="Cleaning">
+            <option value="Room Cleaning">Room Cleaning</option>
+            <option value="Washroom Cleaning">Washroom Cleaning</option>
+          </optgroup>
+          <optgroup label="Other">
+            <option value="Other">Other</option>
+          </optgroup>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Issue Priority/Urgency</label>
+        <div class="radio-group">
+          <label><input type="radio" name="urgency" value="Emergency" required> Emergency (Immediate attention required)</label>
+          <label><input type="radio" name="urgency" value="High"> High (Within 24 hours)</label>
+          <label><input type="radio" name="urgency" value="Medium"> Medium (Within 3 days)</label>
+          <label><input type="radio" name="urgency" value="Low"> Low (Within a week)</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="description">Issue Description</label>
+        <textarea id="description" name="description" rows="5" cols="50"
+                  placeholder="Please describe the issue in detail..." required minlength="20" maxlength="500"
+                  oninput="updateWordCount()"></textarea>
+        <div class="word-count" id="wordCount">0 / 500 characters</div>
+      </div>
+
+      <button type="submit">Submit Request</button>
+    </form>
+  </div>
+
+  <script>
+    function updateWordCount() {
+      const textarea = document.getElementById("description");
+      const wordCount = document.getElementById("wordCount");
+      const count = textarea.value.length;
+      wordCount.textContent = `${count} / 500 characters`;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Semester Grade Tracker</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+      padding: 40px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    thead {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    th, td {
+      padding: 14px 20px;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    tbody tr:hover {
+      background-color: #e0f7fa;
+    }
+
+    .grade {
+      font-weight: bold;
+    }
+
+    .grade.A {
+      color: #4CAF50;
+    }
+
+    .grade.B {
+      color: #2196F3;
+    }
+
+    .grade.C {
+      color: #FF9800;
+    }
+
+    .grade.D {
+      color: #f44336;
+    }
+
+    .grade.F {
+      color: #d32f2f;
+    }
+
+    .percentage {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Semester Grade Tracker</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Module</th>
+        <th>Assignment/Exam Name</th>
+        <th>Maximum Marks</th>
+        <th>Marks Obtained</th>
+        <th>Percentage</th>
+        <th>Grade</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>SDA101</td>
+        <td>Figma Design</td>
+        <td>10</td>
+        <td>7</td>
+        <td class="percentage">70%</td>
+        <td class="grade B">B</td>
+      </tr>
+      <tr>
+        <td>CSF101</td>
+        <td>Midterm Exam</td>
+        <td>10</td>
+        <td>8</td>
+        <td class="percentage">80%</td>
+        <td class="grade A">A</td>
+      </tr>
+      <tr>
+        <td>MTH205</td>
+        <td>Midterm Exam</td>
+        <td>10</td>
+        <td>10</td>
+        <td class="percentage">100%</td>
+        <td class="grade A">A</td>
+      </tr>
+      <tr>
+        <td>NWC205</td>
+        <td>Midterm Exam</td>
+        <td>10</td>
+        <td>8</td>
+        <td class="percentage">80%</td>
+        <td class="grade A">A</td>
+      </tr>
+      <tr>
+        <td>DZO101</td>
+        <td>Midterm Exam</td>
+        <td>10</td>
+        <td>7</td>
+        <td class="percentage">70%</td>
+        <td class="grade B">B</td>
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+</html>

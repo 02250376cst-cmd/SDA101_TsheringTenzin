@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hostel Room Maintenance Request</title>
+    <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #d5edfd;
+      padding: 40px;
+      color: #080808;
+    }
+    h2 {
+        text-align: center;
+        margin-bottom: auto;
+    }
+
+     form {
+        max-width: 700px;
+        margin: 20px;
+        background: #f8fcff;
+        padding: 25px 30px;
+        border-radius: 10px;
+        box-shadow: 0 8px 20px rgba(4, 4, 4, 0.05);
+
+     }
+
+     .form-group {
+        margin-bottom: 20px;
+     }
+        label {
+            display : block;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        input[type="text"]
+        input[type="number"]
+        input[type="email"]
+        input[type="tel"]
+        select
+        textarea {
+            width: 100%;
+            padding: 10px 12px;
+            border:1px #d1e0eb;
+            border-radius: 5px;
+            transition: border 0.3s;
+            font-size: 15px;
+            margin-bottom: 20%;
+            
+        }
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #66afe9;
+            outline: none;
+            box-shadow: 0 0 8px rgba(102, 175, 233, 0.6);
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        
+        select optgroup {
+            font-weight: bold;
+        }
+        
+        radio-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .radio-group label {
+            font-weight: normal;
+        }
+
+        textarea{
+            resize: vertical;
+        }
+
+        .word-count {
+            text-align: right;
+            font-size: 16px;
+            color: #66afe9;
+            margin-bottom: auto;
+        }
+        
+        button[type="submit"]{
+            background-color: #ffffff;
+            color: #007bff;
+            padding: 12px 16px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+    
+        }
+
+        button[type="submit"]:hover {
+        background-color: #2980b9;
+        
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="form container">
+        <h2>Hostel Room Maintenance Request</h2>
+        <form id="maintenanceForm">
+            <div class="form-group">
+            <label for="Name">Full Name</label>
+            <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" 
+            required>
+            </div>
+
+            <div class="studentID">
+                <label for="studentID">Student ID</label>
+                <input type="text" id ="studentID" name="studentID" placeholder="02250123"
+                required>    
+            </div>
+            
+            <div class="form-group">
+                <label for="email"> Email Address</label>
+                <input type="text" id="email" name="email" placeholder="student.cst@rub.edu.bt"
+                required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="Phone" name="phone" placeholder="12345678"
+                required>
+            </div>
+
+            <div class="form-group">
+                <label for="block">Block/Building Name</label>
+                <select name="block" id="block" required Selection>
+                    <option value="" disabled selected>Select Block</option>
+                    <option value="Block A">Block A</option>
+                    <option value="Block B">Block B</option>
+                    <option value="Block C">Block C</option>
+                    <option value="Block F">Block F</option>
+                    <option value="RK">RK</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="roomNumber">Room Number</label>
+                <input type="number" name="roomNumber" id="roomNumber" placeholder="Room number(e.g., 205)"
+                required, range="100-999">
+            </div>
+
+            <div class="form-group">
+                <label for="floorNumber">Floor Number</label>
+                <input type="number" name="floorNumber" id="floorNumber" placeholder="Floor number(e.g., 1)"
+                required, range="1-10">
+
+            </div>
+
+            <div class="form-group">
+                <label for="issueType">Type of Issue</label>
+                <select name="issueType" id="issueType" required>
+                    <option value=""disabled selected> Select Issue Type </option>
+                    <optgroup label="Electrical">
+                        <option value="Light Issue">Light Issue</option>
+                        <option value="Socket">Socket</option>
+                        <option value="Fan">Fan</option>
+                    </optgroup>
+                    <optgroup label="Plumbing">
+                        <option value="Leaking Pipe">Leaking Pipe</option>
+                        <option value="Clogged Sink"> clogged sink</option>
+                        <option value="Toilet Issue">Toilet Issue</option>
+                    </optgroup>
+                    <optgroup label="Furniture">
+                        <option value="Broken Bed">Broken Bed</option>
+                        <option value="Broken Table/Chair">Broken Table/Chair</option>
+                        <option value="Wardrobe Issue">Wardrobe Issue</option>
+                    </optgroup>
+                    <optgroup label="Infrastructure">
+                        <option value="Wall Damage"> Wall Damage</option>
+                        <option value="Ceiling Leak">Ceiling Leak</option>
+                        <option value="Damage Window"> Damage Window</option>
+                    </optgroup>
+                    <optgroup label="Cleaning">
+                        <option value="Room Cleaning">Room Cleaning</option>
+                        <option value="Block Cleaning">Block Cleaning</option>
+                    </optgroup>
+                    <optgroup label="Other">
+                        <option value="Other">other</option>
+                    </optgroup>
+                </select>
+            </div>
+                <div class="form-group">
+                    <label for="Issue Priority/Urgency">Issue Priority/Urgency</label>
+                    <div class="radio-group">
+                    <label><input type="radio" name="urgency" value="Emergency" required> Emergency (Immediate attention required)</label>
+                    <label><input type="radio" name="urgency" value="High"> High (Within 24 hours)</label>
+                    <label><input type="radio" name="urgency" value="Medium"> Medium (Within 3 days)</label>
+                    <label><input type="radio" name="urgency" value="Low"> Low (Within a week)</label>
+                    </div>
+                </div>
+
+            <div class=" form-group">
+                <label for="Description">Issue Description</label>
+                <textarea name="Description" id="Description" rows="5" cols="40"></textarea>
+
+
+            </div>
+
+
+
+                </div>
+            </div>
+            
+
+      </div>
+        </form>
+</div>
+    
+</body>
+</html>

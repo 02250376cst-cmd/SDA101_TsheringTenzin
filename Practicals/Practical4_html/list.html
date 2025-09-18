@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>College Events List</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #cbc4c4;
+      padding: 40px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #272222;
+    }
+
+    ol {
+      counter-reset: event-counter;
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ol > li {
+      background-color: #fff;
+      margin-bottom: 20px;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: background-color 0.3s ease;
+      position: relative;
+    }
+
+    ol > li::before {
+      counter-increment: event-counter;
+      content: "  " counter(event-counter) ". ";
+      font-weight: bold;
+      margin-right: 10px;
+      color: #4CAF50;
+    }
+
+    ol > li:hover {
+      background-color: #e0f7fa;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 20px;
+      margin-top: 10px;
+    }
+
+    ul li::before {
+      content: "•";
+      margin-right: 8px;
+      color: #2196F3;
+    }
+
+    ul li {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Upcoming College Events</h1>
+
+  <ol>
+    <li>
+        Annual Cultural Fest
+      <ul>
+        <li>Time: 5:00 PM, Oct 5</li>
+        <li>Location: Convention Hall</li>
+      </ul>
+    </li>
+    <li>
+      Renewable Energy Workshop
+      <ul>
+        <li>Time: 2:00 PM, Oct 10</li>
+        <li>Location: COnvention Hall</li>
+      </ul>
+    </li>
+    <li>
+       Cleaning Campaign
+      <ul>
+        <li>Time: 10:00 AM, Oct 15</li>
+        <li>Location: Cst</li>
+      </ul>
+    </li>
+    <li>
+      College Tournament
+      <ul>
+        <li>Time: 7:30 PM, Oct 20</li>
+        <li>Location: Cst</li>
+      </ul>
+    </li>
+    <li>
+      Science Exhibition
+      <ul>
+        <li>Time: 11:00 AM, Oct 25</li>
+        <li>Location: Convention Hall</li>
+      </ul>
+    </li>
+  </ol>
+
+</body>
+</html>

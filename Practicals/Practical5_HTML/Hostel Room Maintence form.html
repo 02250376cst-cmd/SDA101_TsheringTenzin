@@ -216,20 +216,21 @@
 
             <div class=" form-group">
                 <label for="Description">Issue Description</label>
-                <textarea name="Description" id="Description" rows="5" cols="40"></textarea>
-
-
+                <textarea name="Description" id="Description" rows="5" cols="50"
+                placeholder="Please Describe The Issue in Details" requried length="20" maxlength="100"
+                oninput="updateountword()"></textarea>
+                <div class="word-count" id="word-count">20/500 characters</div>
             </div>
-
-
-
-                </div>
-            </div>
-            
-
-      </div>
+<button type="submit">Submit Request</button>
         </form>
 </div>
-    
+ <script>
+    function updateWordCount() {
+      const textarea = document.getElementById("description");
+      const wordCount = document.getElementById("wordCount");
+      const count = textarea.value.length;
+      wordCount.textContent = `${count} / 500 characters`;
+    }
+    </script>
 </body>
 </html>
